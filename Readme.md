@@ -1,4 +1,5 @@
-![](doc/images/image19.png)
+![](images/openpipes_logo.png)
+
 For centuries, the captivating sound of pipe organs has been reserved for those privileged enough to access these majestic instruments.Closer in time, there has been a number of projects aiming to emulate the instruments sound and operation with fidelity. The downside is that the solution space has been dominated until now by expensive (in the order of ten of thousand euros), proprietary solutions, limiting access to the platforms only to a few people able to afford them. For that reason, in 2020 the OpenPipes project was founded 
 
 Openpipes, seeks to democratize the virtual pipe organ experience. Our mission is to bring the authentic pipe organ experience to enthusiasts worldwide, regardless of their financial means.
