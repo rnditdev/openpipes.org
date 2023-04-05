@@ -537,24 +537,8 @@ _Figure 8: Schematic capture for the secondary extension board._
 
 ## Portative model
 ![alt_text](images/image1.png "image_tooltip")
-
-
 ## 2 manuals model
-
-
-
-
-
-
 ![alt_text](images/image15.png "image_tooltip")
-
-
 ## 3 manuals model
-
-
-
-
-
-
-![alt_text](images/image24.png "image_tooltip")
+![alt_text](images/image8.png "image_tooltip")
 
