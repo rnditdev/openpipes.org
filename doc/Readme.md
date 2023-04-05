@@ -1,64 +1,3 @@
-<!-- You have some errors, warnings, or alerts. If you are using reckless mode, turn it off to see inline alerts.
-* ERRORs: 0
-* WARNINGs: 0
-* ALERTS: 28 -->
-
-
-<ul style="color: red; font-weight: bold"><li>See top comment block for details on ERRORs and WARNINGs. <li>In the converted Markdown or HTML, search for inline alerts that start with >>>>>  gd2md-html alert:  for specific instances that need correction.</ul>
-
-
-<a href="#gdcalert2">alert2</a>
-<a href="#gdcalert3">alert3</a>
-<a href="#gdcalert4">alert4</a>
-<a href="#gdcalert5">alert5</a>
-<a href="#gdcalert6">alert6</a>
-<a href="#gdcalert7">alert7</a>
-<a href="#gdcalert8">alert8</a>
-<a href="#gdcalert9">alert9</a>
-<a href="#gdcalert10">alert10</a>
-<a href="#gdcalert11">alert11</a>
-<a href="#gdcalert12">alert12</a>
-<a href="#gdcalert13">alert13</a>
-<a href="#gdcalert14">alert14</a>
-<a href="#gdcalert15">alert15</a>
-<a href="#gdcalert16">alert16</a>
-<a href="#gdcalert17">alert17</a>
-<a href="#gdcalert18">alert18</a>
-<a href="#gdcalert19">alert19</a>
-<a href="#gdcalert20">alert20</a>
-<a href="#gdcalert21">alert21</a>
-<a href="#gdcalert22">alert22</a>
-<a href="#gdcalert23">alert23</a>
-<a href="#gdcalert24">alert24</a>
-<a href="#gdcalert25">alert25</a>
-<a href="#gdcalert26">alert26</a>
-<a href="#gdcalert27">alert27</a>
-<a href="#gdcalert28">alert28</a>
-
-
-
-
-Building your own Virtual Pipe Organ
-
-_Open Source Edition_
-
-
-
-
-
-
-![alt_text](images/image1.png "image_tooltip")
-
-
-Index
-
-
-[TOC]
-
-
-
-
-
 # About Openpipes
 
 **Openpipes.org** is a full-stack open source Virtual Pipe Organ project. It involves all aspects of the instrument: from the cabinet to the controllers, pedalliers, and sound engine.
@@ -73,7 +12,7 @@ Index
 
 
 
-![alt_text](images/image2.png "image_tooltip")
+![alt_text](images/image19.png "image_tooltip")
 
 
 
@@ -131,7 +70,7 @@ Overall, the main advantage of real wood is that it is a natural, durable, and l
 
 
 
-![alt_text](images/image3.png "image_tooltip")
+![alt_text](images/image12.png "image_tooltip")
 
 
 This is a 61 keys portable model, with the capacity of having an embedded device, as a Raspberry Pi, and a normal Mini ITX motherboard. It also has enough space for hosting an amplifier and speakers.
@@ -152,7 +91,7 @@ This is a 2 manuals model of modest sizes, which can be built with only 1 sheet 
 
 
 
-![alt_text](images/image4.png "image_tooltip")
+![alt_text](images/image10.png "image_tooltip")
 
 
 
@@ -168,7 +107,7 @@ This model is 1.30m wide, so it supports a full-size pedalboard.
 
 
 
-![alt_text](images/image5.jpg "image_tooltip")
+![alt_text](images/image27.jpg "image_tooltip")
 
 
 
@@ -180,7 +119,7 @@ This model is 1.30m wide, so it supports a full-size pedalboard.
 
 
 
-![alt_text](images/image6.jpg "image_tooltip")
+![alt_text](images/image8.jpg "image_tooltip")
 
 
 
@@ -210,7 +149,7 @@ The E49 hall sensor has a sensitivity of 1.5 to 4.5 mV/G, which means that it pr
 
 
 
-![alt_text](images/image7.png "image_tooltip")
+![alt_text](images/image26.png "image_tooltip")
 
 
 
@@ -231,7 +170,7 @@ As a musician, you could use a Raspberry Pi to create your own digital music stu
 
 
 
-![alt_text](images/image8.png "image_tooltip")
+![alt_text](images/image14.png "image_tooltip")
 
 
 
@@ -343,18 +282,9 @@ Bookshelf active speaker systems are a type of audio system that consists of a s
 
 
 
-![alt_text](images/image9.png "image_tooltip")
-
-
-
 # 5. Changing the sound: Buttons and Pedals
 
 
-
-
-
-
-![alt_text](images/image10.png "image_tooltip")
 
 
 
@@ -534,7 +464,7 @@ This PCB has the system controller, the MIDI transceiver circuit, and the ports 
 
 
 
-![alt_text](images/image11.png "image_tooltip")
+![alt_text](images/image18.png "image_tooltip")
 
 
 _Figure 1: 3D view of the MIDI controller board_
@@ -569,7 +499,7 @@ To read a voltage from a E49 hall sensor in Arduino, you can follow these steps:
 
 
 
-![alt_text](images/image12.png "image_tooltip")
+![alt_text](images/image13.png "image_tooltip")
 
 
 The schematic illustrates more how things are connected to each other.
@@ -584,17 +514,7 @@ The schematic illustrates more how things are connected to each other.
 
 _Figure 2:MIDI Controller schematic capture._
 
-… And here is the final layout.
 
-
-
-
-
-
-![alt_text](images/image14.jpg "image_tooltip")
-
-
-_Figure 3: MIDI controller PCB layout._
 
 
 ## Double array button board
@@ -606,7 +526,7 @@ This board has all 16 buttons on it connected to the multiplexer, with 8 NeoPixe
 
 
 
-![alt_text](images/image15.jpg "image_tooltip")
+![alt_text](images/image22.jpg "image_tooltip")
 
 
 _Figure 10: 3D view of the double array button board._
@@ -616,17 +536,7 @@ _Figure 10: 3D view of the double array button board._
 
 
 
-![alt_text](images/image16.png "image_tooltip")
-
-
-_Figure 11: Schematic capture of the double array button board._
-
-
-
-
-
-
-![alt_text](images/image17.png "image_tooltip")
+![alt_text](images/image4.png "image_tooltip")
 
 
 _Figure 12: PCB layout of the double array button board._
@@ -639,7 +549,7 @@ _Figure 12: PCB layout of the double array button board._
 
 
 
-![alt_text](images/image18.jpg "image_tooltip")
+![alt_text](images/image5.jpg "image_tooltip")
 
 
 This board has the multiplexer IC 74HC4067 that passes the state of the selected channel, connected to it 8 keys out of 16, also mounted to the board WS2812 Neopixel LEDs connected in a daisy chain manner. The board has the bridge pin header connector to attach the second extension board. The board has auxiliary pins for debugging the states.
@@ -649,34 +559,11 @@ This board has the multiplexer IC 74HC4067 that passes the state of the selected
 
 
 
-![alt_text](images/image19.png "image_tooltip")
+![alt_text](images/image6.png "image_tooltip")
 
 
 _Figure 4:3D view of the main extension board_
 
-
-
-
-
-
-![alt_text](images/image20.png "image_tooltip")
-
-
-_Figure 5: Schematic capture for the main extension board._
-
-
-
-
-
-
-![alt_text](images/image21.png "image_tooltip")
-
-
-_Figure 6: PCB layout for the main extension board._
-
-**Extension board 2 **
-
-This board has the other 8 keys and Neopixels with auxiliary pins. It’s connected to the main extension board through female header.
 
 
 
@@ -703,24 +590,6 @@ _Figure 8: Schematic capture for the secondary extension board._
 
 
 
-![alt_text](images/image24.png "image_tooltip")
-
-
-_Figure 9: PCB layout of the secondary extension board._
-
-
-## 
-
-
-
-
-
-
-![alt_text](images/image25.jpg "image_tooltip")
-
-
-
-
 
 # Appendix 1: Detailed console plans
 
@@ -731,7 +600,7 @@ Portative model
 
 
 
-![alt_text](images/image26.png "image_tooltip")
+![alt_text](images/image1.png "image_tooltip")
 
 
 2 manuals model
@@ -741,7 +610,7 @@ Portative model
 
 
 
-![alt_text](images/image27.png "image_tooltip")
+![alt_text](images/image15.png "image_tooltip")
 
 
 3 manuals model
@@ -751,5 +620,5 @@ Portative model
 
 
 
-![alt_text](images/image28.png "image_tooltip")
+![alt_text](images/image24.png "image_tooltip")
 
