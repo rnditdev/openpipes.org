@@ -7,7 +7,7 @@ Openpipes, seeks to democratize the virtual pipe organ experience. Our mission i
 
 With that goal in mind, our team has developed a wide range range of open-source hardware solutions, including MIDI controllers, customizable wooden console plans, innovative and totally 3D printed button controllers, and volume pedals sensors.
 
-It also has developed a low latency audio engine based on Linux on Raspberry Pi, called Pipebian, which allows 
+It also has developed a low latency audio engine based on Linux on Raspberry Pi, called Pipebian.
 
 OpenPipes offers an accessible, flexible virtual pipe organ platform. It integrates seamlessly integrate with the existing free and paid Virtual Organ solutions, like GrandOrgue and Hauptwerk.
 
