@@ -495,44 +495,20 @@ To read a voltage from a E49 hall sensor in Arduino, you can follow these steps:
 #### Controller Pinout
 
 
-
-
-
-
 ![alt_text](images/image18.png "image_tooltip")
-
-
-
-
-
-
-
 
 ![alt_text](images/image13.png "image_tooltip")
 
 
 _Figure 2:MIDI Controller schematic capture._
 
-
-
-
 ## Double array button board
 
 This board has all 16 buttons on it connected to the multiplexer, with 8 NeoPixel LEDs connected in daisy chain, it also has a 10-pin IDC to be connected to the MIDI controller board. All channels were pinned out for debugging purposes.
 
-
-
-
-
-
 ![alt_text](images/image22.jpg "image_tooltip")
 
-
 _Figure 10: 3D view of the double array button board._
-
-
-
-
 
 
 ![alt_text](images/image4.png "image_tooltip")
@@ -540,13 +516,7 @@ _Figure 10: 3D view of the double array button board._
 
 _Figure 12: PCB layout of the double array button board._
 
-
 ## RGB Thumb Button Boards
-
-
-
-
-
 
 ![alt_text](images/image5.jpg "image_tooltip")
 
@@ -554,55 +524,22 @@ _Figure 12: PCB layout of the double array button board._
 This board has the multiplexer IC 74HC4067 that passes the state of the selected channel, connected to it 8 keys out of 16, also mounted to the board WS2812 Neopixel LEDs connected in a daisy chain manner. The board has the bridge pin header connector to attach the second extension board. The board has auxiliary pins for debugging the states.
 
 
-
-
-
-
 ![alt_text](images/image6.png "image_tooltip")
 
 
 _Figure 4:3D view of the main extension board_
 
-
-
-
-
-
-
-![alt_text](images/image22.png "image_tooltip")
-
-
-_Figure 7: 3D view of the secondary extension board._
-
-
-
-
-
-
 ![alt_text](images/image23.png "image_tooltip")
 
 
 _Figure 8: Schematic capture for the secondary extension board._
-
-
-
-
-
-
-
 # Appendix 1: Detailed console plans
 
-Portative model
-
-
-
-
-
-
+## Portative model
 ![alt_text](images/image1.png "image_tooltip")
 
 
-2 manuals model
+## 2 manuals model
 
 
 
@@ -612,7 +549,7 @@ Portative model
 ![alt_text](images/image15.png "image_tooltip")
 
 
-3 manuals model
+## 3 manuals model
 
 
 
