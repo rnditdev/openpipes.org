@@ -20,36 +20,17 @@ General Structure of a Virtual Pipe Organ
 
 
 
-The][ virtual pipe organ console is the part of a pipe organ
-where the organist plays. It typically consists of:
+The virtual pipe organ console is the part of a pipe organ where the organist plays. It typically consists of:
 
+-   One or more manuals, which are the keyboards that the organist plays;
 
+-   The pedalboard, that the organist plays with their feet;
 
--   [one or more ][, which are the keyboards that
-    the organist plays;
+-   A number of stops, which are buttons or levers that the organist uses to select which ranks of pipes will sound when a particular manual or the pedalboard is played;
 
+-   One or more volume pedals, that the organist uses to tune the audio level of a keyboard;
 
-
--   [the ][, that the organist plays with their
-    feet;
-
-
-
--   [a number of ][, which are
-    ][ that the organist
-    uses to select which ranks of pipes will sound when a particular
-    manual or the pedalboard is played;
-
-
-
--   [One or more ][, that the organist uses
-    to tune the audio level of a keyboard;
-
-
-
--   [Some ][ or
-    ][that the organist uses
-    to activate particular functions.
+-   Some buttons or foot pistons that the organist uses to activate particular functions.
 
 
 
@@ -60,7 +41,7 @@ the organist can easily reach them while playing.
 
 
 
-Some insights about carpentry: Melamine (MDF) and real wood
+## Some insights about carpentry: Melamine (MDF) and real wood
 
 
 
@@ -74,7 +55,7 @@ because of its durability and ease of maintenance.
 
 
 
-Melamine vs real wood
+## Melamine vs real wood
 
 is a type of engineered wood that is made from wood fibers that are
 bound together with a synthetic resin. It is a durable and
@@ -93,7 +74,7 @@ material.
 
 
 
-MDF advantages:
+## MDF advantages:
 
 
 
@@ -106,7 +87,7 @@ MDF advantages:
 
 
 
-Real wood advantages:
+## Real wood advantages:
 
 
 
@@ -137,7 +118,7 @@ humidity.
 
 
 
-Cabinet main structure per model
+#Cabinet main structure per model
 
 #Portative model
 
@@ -165,7 +146,7 @@ Portative Model Plan:
 
 
 
-#2 manuals minimal model
+# 2 manuals minimal model
 
 This is a 2 manuals model of modest sizes, which can be built with only
 1 sheet of material (of 1.8m x 2.6m)
@@ -174,12 +155,7 @@ This is a 2 manuals model of modest sizes, which can be built with only
 ![](images/image10.png)
 
 
-
-------------------------------------------------------------------------
-
-#
-
-#2 manuals extended model
+# 2 manuals extended model
 
 This model is 1.30m wide, so it supports a full-size pedalboard.
 
@@ -188,19 +164,14 @@ This model is 1.30m wide, so it supports a full-size pedalboard.
 
 
 
-#3 manuals flexible organ
+# 3 manuals flexible organ
 
 #![](images/image8.jpg)
 
-#
-
-------------------------------------------------------------------------
-
-#
 
 
 
-# 2. [The pedalboard
+# 2. The pedalboard
 
 A pipe organ pedalboard is a type of keyboard that is played with the
 feet. It is typically used to play the bass notes of the organ, and it
@@ -213,12 +184,9 @@ the organist to play a wide range of bass notes and create a full, rich
 sound.
 
 
-
-#
-
 # Volume pedals and foot pistons 
 
-#Hall sensors
+## Hall sensors
 
 
 
@@ -252,13 +220,12 @@ where the temperature may vary greatly.
 
 ![](images/image26.png)
 
-##
 
-3. Sound Generation engine
+# 3. Sound Generation engine
 
-#Embedded system
+## Embedded system
 
-#Raspberry Pi
+### Raspberry Pi
 
 A Raspberry Pi is a small, single-board computer that was first
 developed in the United Kingdom as a low-cost way of promoting computer
@@ -275,9 +242,9 @@ your musical ideas and bring them to life.
 
 ![](images/image14.png)
 
-#X86 PC-based system
+# X86 PC-based system
 
-##X86 standard mainboard
+## X86 standard mainboard
 
 A standard x86 mainboard is the central component of a computer that
 holds the CPU, memory, and other components that make up a computer
@@ -290,9 +257,9 @@ the other components to communicate with each other.
 
 
 
-4. Power Source
+$ 4. Power Source
 
-#4.1 X86 based system: AC/DC power source
+## 4.1 X86 based system: AC/DC power source
 
 
 
@@ -309,7 +276,7 @@ modes.
 
 
 
-#4.2 X86
+#$ 4.2 X86
 
 An ATX power supply is a type of power supply unit (PSU) that is
 commonly used in desktop computers. ATX power supplies are typically
@@ -339,11 +306,11 @@ components running smoothly.
 
 
 
-##Main boards
+## Main boards
 
 
 
-X86 boards
+### X86 boards
 
 
 
@@ -394,7 +361,7 @@ various tasks.
 
 
 
-Raspberry Pi Board
+### Raspberry Pi Board
 
 
 
@@ -416,9 +383,9 @@ you need to run your VPO, called Pipebian.
 
 
 
-#Sound output boards
+# Sound output boards
 
-###USB DAC
+### USB DAC
 
 Sure! A USB DAC, or Digital-to-Analog Converter, is a device that
 converts digital audio signals into analog audio signals. This is
@@ -450,7 +417,7 @@ equipment.
 
 
 
-###The PCM 2704 CHIP
+### The PCM 2704 CHIP
 
 
 
@@ -474,26 +441,9 @@ audio.
 The Linux Operating system
 
 
+# Pipe Organ emulating software
 
-Specialized Linux distros
-
-
-
-Pipebian
-
-
-
-
-
-86Pipes
-
-
-
-
-
-Pipe Organ emulating software
-
-###GrandOrgue
+### GrandOrgue
 
 GrandOrgue is a free and open-source virtual pipe organ software that
 allows users to build and play virtual pipe organs on their computers.
@@ -508,50 +458,6 @@ base for the Openpipes distribution.
 
 
 
-Jorgan
-
-
-
-
-
-Aeolus
-
-
-
-3. Speaker 
-
-
-
-An ][ is a type of
-audio system that includes built-in amplifiers. This means that the
-speakers are self-powered, and do not require an external amplifier or
-receiver to operate. The amplifiers are typically built into the speaker
-enclosure, which allows for a more compact and self-contained design.
-
-
-
-
-This is in contrast to a ][passive speaker system]{.c43 .c21
-.c8}[, which relies on an external amplifier to power the speakers.
-Active speaker systems are often used in home theater systems and other
-audio setups where space is at a premium, or where simplicity and
-convenience are important.
-
-
-
-
-
-Bookshelf active speaker systems are a type of audio system that
-consists of a set of small, self-contained speakers that are designed to
-be placed on a bookshelf or another similar surface. Unlike traditional
-speakers, which require an external amplifier to power them, bookshelf
-active speakers have a built-in amplifier that allows them to be used
-without any additional equipment. This makes them a convenient and
-easy-to-use option for people who want to listen to music, movies, or
-other audio content in their homes. Because of their compact size,
-bookshelf active speakers are also often a good choice for people who
-have limited space for their audio equipment.
-
 
 
 
@@ -560,7 +466,7 @@ have limited space for their audio equipment.
 
 ------------------------------------------------------------------------
 
-5. Changing the sound: Buttons and Pedals
+# 5. Changing the sound: Buttons and Pedals
 
 
 
@@ -572,7 +478,7 @@ have limited space for their audio equipment.
 
 
 
-#Arduino: The Open source solution for creating controllers
+# Arduino: The Open source solution for creating controllers
 
 
 
@@ -646,7 +552,7 @@ and memory, making it suitable for more complex projects.
 
 
 
-#OpenPipes Chosen platform: Arduino Pro Micro
+## OpenPipes Chosen platform: Arduino Pro Micro
 
 An Arduino Pro Micro is a small microcontroller board based on the
 ATmega32U4 microcontroller. It has 20 digital input/output pins, a 16
@@ -659,7 +565,7 @@ tool for building a wide range of electronic devices.
 
 
 
-#Developing Arduino Programs: The Arduino IDE.
+## Developing Arduino Programs: The Arduino IDE.
 
 
 
@@ -681,7 +587,7 @@ projects.
 
 
 
-Installing the Arduino IDE
+## Installing the Arduino IDE
 
 
 
@@ -708,15 +614,9 @@ operating systems.
 
 
 
-##Creating simple programs and loading them into the Arduino Nano
 
 
-
-
-
-
-
-#Emulating A Midi device with the Arduino Nano
+# Emulating A Midi device with the Arduino Nano
 
 
 
@@ -726,8 +626,7 @@ for MIDI communication over USB to the Arduino. Once the library is
 installed, you can use the MIDIUSB library functions in your Arduino
 code to send and receive MIDI messages over the USB connection. You will
 also need to connect the Arduino to a computer using a USB cable, and
-configure the computer to recognize the Arduino as a MIDI device.]{.c7
-.c8}
+configure the computer to recognize the Arduino as a MIDI device.
 
 Here are some more details on how to use an Arduino Pro Micro to
 emulate a MIDI USB device:
@@ -754,8 +653,7 @@ midiEventPacket(MIDI_NOTE_ON, 1, 60);
 
 
 
-4.  [To receive MIDI messages, you can use the ]{.c25
-    .c8}[midiEventPacket][ function in a similar way, but
+4.  To receive MIDI messages, you can use the midiEventPacket function in a similar way, but
     this time you will also need to specify a callback function that
     will be executed whenever a MIDI message is received. The callback
     function should take the MIDI message type, channel, and data as
@@ -763,41 +661,13 @@ midiEventPacket(MIDI_NOTE_ON, 1, 60);
     MIDI message in your code. For example, the following code will
     print the received MIDI message to the serial console:
 
-void ][(uint8_t type, uint8_t channel,
-uint8_t data) 
-
-  Serial][(\"Received MIDI message: type=\");]{.c20
-.c12}
-
-  Serial
-
-  Serial
-
-  Serial
-
-  Serial
-
-  Serial
-
-}
 
 
 
-void 
+## MIDI
 
-  // Initialize the serial console
-
-  Serial
-
-  
-
-  // Register the callback function to be executed when a MIDI message
-is received
-
-  MIDI
-
-5.  [Finally, to configure the computer to recognize the Arduino as a
-    MIDI device, you will need to install a USB-MIDI driver on the
+Finally, to configure the computer to recognize the Arduino as a
+MIDI device, you will need to install a USB-MIDI driver on the
     computer. Most computers will automatically install the necessary
     drivers when the Arduino is connected, but if this doesn\'t happen,
     you can download and install the appropriate driver from the Arduino
@@ -806,7 +676,7 @@ is received
     Arduino as a MIDI device, and you can use it to send and receive
     MIDI messages in your music software.
 
-#Reaching for inputs: The 
+# Reaching for inputs:
 
 The 74HC4067 is a 16-channel multiplexer, which means that it can be
 used to select and route one of 16 input signals to a single output.
@@ -830,11 +700,11 @@ manner.
 
 
 
-#Displaying information using light: The Neopixel ws2812B
+## Displaying information using light: The Neopixel ws2812B
 
 
 
-##What's a Neopixel?
+### What's a Neopixel?
 
 
 
@@ -875,52 +745,10 @@ that changes in time with the music.
 
 
 
-Here you have a simple example for Arduino:
 
+# The OpenPipes hardware controller
 
-
-#include \<Adafruit_NeoPixel.h\>
-
-
-
-const int LED_PIN = 2;  // Pin where the neopixel is connected]{.c20
-.c12}
-
-const int LED_COUNT = 1;  // Number of neopixels in your strip]{.c20
-.c12}
-
-
-
-// Initialize the neopixel library
-
-Adafruit_NeoPixel pixels = Adafruit_NeoPixel(LED_COUNT, LED_PIN,
-NEO_GRB + NEO_KHZ800);
-
-
-
-void setup() 
-
-  pixels.begin();  // Initialize the neopixel library
-
-}
-
-
-
-void loop() 
-
-  pixels.setPixelColor(0, pixels.Color(255, 0, 0));  // Set the first
-neopixel to red
-
-  pixels.show();  // Send the updated pixel colors to the neopixel
-strip
-
-}
-
-#
-
-#The OpenPipes hardware controller
-
-#Main 
+## Main controller
 
 This PCB has the system controller, the MIDI transceiver circuit, and
 the ports to which the keys will be attached. The PCB was made to be
@@ -976,9 +804,6 @@ these steps:
 3.  [Convert the value returned by the analogRead() function to a
     voltage value by using the following formula:
 
-```
-<!-- -->
-```
 4.  [Use the voltage value to determine the strength of the magnetic
     field that is being measured by the E49 hall sensor. The voltage
     output of the E49 hall sensor is proportional to the strength of the
@@ -989,7 +814,7 @@ these steps:
 
 
 
-###Controller Pinout
+## Controller Pinout
 
 ![](images/image13.png)
 
@@ -997,9 +822,6 @@ these steps:
 
 The schematic illustrates more how things are connected to each
 other.
-
-
-
 
 
 ![Diagram, schematic Description automatically
@@ -1016,7 +838,7 @@ Figure 3: MIDI controller PCB layout.
 
 ------------------------------------------------------------------------
 
-#Double array button board
+## Double array button board
 
 This board has all 16 buttons on it connected to the multiplexer, with
 8 NeoPixel LEDs connected in daisy chain, it also has a 10-pin IDC to be
@@ -1031,32 +853,19 @@ Figure 10: 3D view of the double array button board.
 ![Diagram, schematic Description automatically
 generated](images/image28.png)
 
-Figure 11: Schematic capture of the double array button board.]{.c39
-.c35}
+Figure 11: Schematic capture of the double array button board.]
 
 ![A picture containing text, electronics Description automatically
 generated](images/image4.png)
 
 Figure 12: PCB layout of the double array button board.
 
-#
 
-#RGB Thumb Button Boards
-
-
+## RGB Thumb Button Boards
 
 
 
 ![](images/image5.jpg)
-
-
-
-
-
-
-
-
-
 
 
 This board has the multiplexer IC 74HC4067 that passes the state of the
@@ -1098,8 +907,7 @@ Figure 7: 3D view of the secondary extension board.
 ![Diagram Description automatically
 generated](images/image20.png)
 
-Figure 8: Schematic capture for the secondary extension board.]{.c35
-.c39}
+Figure 8: Schematic capture for the secondary extension board.]
 
 
 
@@ -1134,11 +942,3 @@ Portative model
 3 manuals model
 
 ![](images/image29.png)
-
-
-
-
-
-
-
-
