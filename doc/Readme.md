@@ -491,12 +491,6 @@ To read a voltage from a E49 hall sensor in Arduino, you can follow these steps:
 3. Convert the value returned by the analogRead() function to a voltage value by using the following formula:
 1. Use the voltage value to determine the strength of the magnetic field that is being measured by the E49 hall sensor. The voltage output of the E49 hall sensor is proportional to the strength of the magnetic field, so a higher voltage indicates a stronger magnetic field, and a lower voltage indicates a weaker magnetic field.
 
-
-#### Controller Pinout
-
-
-![alt_text](images/image18.png "image_tooltip")
-
 ![alt_text](images/image13.png "image_tooltip")
 
 
