@@ -540,5 +540,5 @@ _Figure 8: Schematic capture for the secondary extension board._
 ## 2 manuals model
 ![alt_text](images/image15.png "image_tooltip")
 ## 3 manuals model
-![alt_text](images/image8.jpg "image_tooltip")
+![alt_text](images/image29.png "image_tooltip")
 
