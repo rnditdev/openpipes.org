@@ -499,10 +499,9 @@ To read a voltage from a E49 hall sensor in Arduino, you can follow these steps:
 
 
 
-![alt_text](images/image13.png "image_tooltip")
+![alt_text](images/image18.png "image_tooltip")
 
 
-The schematic illustrates more how things are connected to each other.
 
 
 
