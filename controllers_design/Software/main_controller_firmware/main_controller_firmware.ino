@@ -7,16 +7,16 @@ const int muxSIG3 = 13;
 const int muxSIG4 = 12;
 
 uint32_t startTimer = millis();
-constexpr uint32_t timeDiff = 10000;
+constexpr uint32_t timeDiff = 50000;
 int sendVolumeTimeFlag = 0;
 
 
 int ports[]={15,14,10,16};
 
-int volumecenters[]={454,511,460,460};
-int volumelow[]={200,200,200,200};
+int volumecenters[]={485,484,507,512};
+int volumelow[]={230,230,330,230};
 int volumehigh[]={823,823,823,823};
-int enabledvolumesensors[]={0,1,0,0};
+int enabledvolumesensors[]={0,0,0,0};
 int enabledbuttonsensors[]={1,1,1,1};
 const int buttonValues[4];
 
@@ -86,9 +86,10 @@ void processKey(int notenumber, int keystate) {
 void processVolume(int sensor, int volumeread) {
    //notenumber=31-notenumber; //this code is for pedals
    //int note = 0x18 + notenumber;  //This code is for pedals
-   int cc=0x0 + sensor;
-
-   int newvalue = (abs(0.0000040 *(volumehigh[sensor]-volumeread) *(volumehigh[sensor]-volumeread) * (volumehigh[sensor]-volumeread)));
+   int cc=0x0 + sensor+1;
+   float ratio = (float(volumeread)-float(volumelow[sensor]))/(float(volumecenters[sensor])-float(volumelow[sensor]));
+   Serial.println(ratio);
+   int newvalue =  (abs(ratio*ratio*ratio*127));
    if (newvalue < 0 ) {newvalue = 0;}
    if (newvalue > 127 ) {newvalue = 127;}
    
@@ -96,12 +97,12 @@ void processVolume(int sensor, int volumeread) {
    if ((millis() - startTimer) > timeDiff){
      sendVolumeTimeFlag = 1;
      startTimer=millis();
-     Serial.println(F("AAAAAAAAAAAAAAAAAAAAAAAAAA"));
    }
 
-
+       Serial.println(newvalue);
    if ( ((abs(volumeread -volumepedals[sensor])>5) && (enabledvolumesensors[sensor]==1)) ||   sendVolumeTimeFlag == 1 ) {
        controlChange(0, cc, newvalue);
+
        volumepedals[sensor]=volumeread;
        MidiUSB.flush();
        if (sendVolumeTimeFlag == 1 ) {sendVolumeTimeFlag=0;}
@@ -223,4 +224,5 @@ void loop() {
   checkKeys();
   checkMidi();
   checkVolumes();
+  delay(100);
 }
