@@ -224,5 +224,4 @@ void loop() {
   checkKeys();
   checkMidi();
   checkVolumes();
-  delay(100);
 }
