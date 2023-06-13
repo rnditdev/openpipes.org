@@ -17,8 +17,8 @@
 #include <Adafruit_SSD1306.h>
 #include <MIDIUSB.h>
 
-#define i2c_Address 0x3c
-
+#define i2c_Address1 0x3C
+#define i2c_Address2 0x3C
 const byte sysexStart = 0xF0;
 const byte sysexEnd = 0xF7;
 const byte manufacturerId = 0x7D;
@@ -29,10 +29,12 @@ int index = 0;
 bool isReadingSysex = false;
 
 #define SCREEN_WIDTH 128
-#define SCREEN_HEIGHT 64
+#define SCREEN_HEIGHT 32
 
 //Adafruit_SH1106G display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, -1);
-Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, -1);
+Adafruit_SSD1306 display(SCREEN_WIDTH, 32 , &Wire, -1);
+Adafruit_SSD1306 display2(SCREEN_WIDTH, 32, &Wire, -1);
+
 
 // Select I2C BUS
 void TCA9548A(uint8_t bus){
@@ -41,100 +43,70 @@ void TCA9548A(uint8_t bus){
   Wire.endTransmission();
   Serial.print(bus);
 }
+
+void TCA9548A2(uint8_t bus){
+  Wire.beginTransmission(0x71);  // TCA9548A address
+  Wire.write(1 << bus);          // send byte to select bus
+  Wire.endTransmission();
+  Serial.print(bus);
+}
+
  
 void setup() {
-  Serial.begin(115200);
-  delay(100);
+  Serial.begin(9600);
 
-  // Start I2C communication with the Multiplexer
-  display.begin(i2c_Address, true);
-
-  // Init OLED display on bus number 2
-  TCA9548A(2);
-  if(!display.begin(SSD1306_SWITCHCAPVCC, i2c_Address)) {
+  for (int i=0; i<8;i++){
+  TCA9548A2(i);
+  if(!display2.begin(SSD1306_SWITCHCAPVCC, i2c_Address2)) {
     Serial.println(F("SSD1306 allocation failed"));
     for(;;); // Don't proceed, loop forever
   }
+  display2.clearDisplay();
+  display2.drawPixel(10, 5*i, SSD1306_WHITE);
+  display2.setTextSize(1);      // Normal 1:1 pixel scale
+  display2.setTextColor(SSD1306_WHITE); // Draw white text
+  display2.setCursor(10, 10);     // Start at top-left corner
+  display2.cp437(true);         // Use full 256 char 'Code Page 437' font
 
-
-  //if(!display.begin(i2c_Address, true)) {
-  //  Serial.println(F("SSD1306 allocation failed"));
-  //  for(;;);
-  //} 
-  // Clear the buffer
-  display.clearDisplay();
-
-  // Init OLED display on bus number 3
-  //TCA9548A(3);
-  //if(!display.begin(i2c_Address, true)) {
-//Serial.println(F("SSD1306 allocation failed"));
- //   for(;;);
- // } 
-
-  // Write to OLED on bus number 2
-TCA9548A(2);
-display.clearDisplay();
-
-  display.setTextSize(2);      // Normal 1:1 pixel scale
-  display.setTextColor(SH110X_WHITE); // Draw white text
-  display.setCursor(45, 0);     // Start at top-left corner
-  display.cp437(true);         // Use full 256 char 'Code Page 437' font
-
-  // Not all the characters will fit on the display. This is normal.
-  // Library will draw what it can and the rest will be clipped.
-  display.println("HW3");
-  display.setTextSize(3);      // Normal 1:1 pixel scale
-  display.setCursor(15, 20);     // Start at top-left corner
-  display.println("Quint");
-  display.setTextSize(2);      // Normal 1:1 pixel scale
-  display.setCursor(50, 50);     // Start at top-left corner
-  display.cp437(true);         // Use full 256 char 'Code Page 437' font
-  display.println("4");
- 
-
+  display2.println("22");
+  display2.setCursor(10, 20);
+  display2.println(i);
   
 
-  display.display();
+  // Show the display buffer on the screen. You MUST call display() after
+  // drawing commands to make them visible on screen!
+  display2.display();
+}
+  
 
-  // Write to OLED on bus number 3
-  TCA9548A(3);
+
+  delay(100);
+  // Start I2C communication with the Multiplexer
+  for (int i=0; i<8;i++){
+  TCA9548A(i);
+  if(!display.begin(SSD1306_SWITCHgrCAPVCC, i2c_Address1)) {
+    Serial.println(F("SSD1306 allocation failed"));
+    for(;;); // Don't proceed, loop forever
+  }
   display.clearDisplay();
-
-  display.setTextSize(2);      // Normal 1:1 pixel scale
-  display.setTextColor(SH110X_WHITE); // Draw white text
-  display.setCursor(45, 0);     // Start at top-left corner
+  display.drawPixel(10, 5*i, SSD1306_WHITE);
+  display.setTextSize(1);      // Normal 1:1 pixel scale
+  display.setTextColor(SSD1306_WHITE); // Draw white text
+  display.setCursor(10, 10);     // Start at top-left corner
   display.cp437(true);         // Use full 256 char 'Code Page 437' font
 
-  // Not all the characters will fit on the display. This is normal.
-  // Library will draw what it can and the rest will be clipped.
-  display.println("HW");
+  display.println("11");
+  display.setCursor(10, 20);
+  display.println(i);
 
-
-
-
-  display.setTextSize(3);      // Normal 1:1 pixel scale
-  display.setTextColor(SH110X_WHITE); // Draw white text
-  display.setCursor(0, 20);     // Start at top-left corner
-  display.cp437(true);         // Use full 256 char 'Code Page 437' font
-
-  // Not all the characters will fit on the display. This is normal.
-  // Library will draw what it can and the rest will be clipped.
-  display.println("Bourdon");
-
-
-  display.setTextSize(2);      // Normal 1:1 pixel scale
-  display.setTextColor(SH110X_WHITE); // Draw white text
-  display.setCursor(50, 50);     // Start at top-left corner
-  display.cp437(true);         // Use full 256 char 'Code Page 437' font
-
-  // Not all the characters will fit on the display. This is normal.
-  // Library will draw what it can and the rest will be clipped.
-  display.println("8");
- 
-
+  // Show the display buffer on the screen. You MUST call display() after
+  // drawing commands to make them visible on screen!
   display.display();
 }
 
+
+
+}
 
 void displaySysexMessage() {
   byte panelIdLSB = data[3];
@@ -151,18 +123,39 @@ void displaySysexMessage() {
   Serial.print(", Text: ");
   Serial.println(text);
 
-TCA9548A(panelIdMSB+2);
+
+if (panelIdMSB < 8){
+TCA9548A(panelIdMSB);
 display.clearDisplay();
 
   display.setTextSize(2);      // Normal 1:1 pixel scale
   display.setTextColor(SH110X_WHITE); // Draw white text
-  display.setCursor(0, 32);     // Start at top-left corner
+  display.setCursor(0, 0);     // Start at top-left corner
   display.cp437(true);         // Use full 256 char 'Code Page 437' font
 
   // Not all the characters will fit on the display. This is normal.
   // Library will draw what it can and the rest will be clipped.
   display.println(text);
   display.display();
+
+}
+
+else{
+TCA9548A2(panelIdMSB-8);
+display2.clearDisplay();
+
+  display2.setTextSize(2);      // Normal 1:1 pixel scale
+  display2.setTextColor(SH110X_WHITE); // Draw white text
+  display2.setCursor(0, 0);     // Start at top-left corner
+  display2.cp437(true);         // Use full 256 char 'Code Page 437' font
+
+  // Not all the characters will fit on the display. This is normal.
+  // Library will draw what it can and the rest will be clipped.
+  display2.println(text);
+  display2.display();
+
+
+}
 
 }
  
