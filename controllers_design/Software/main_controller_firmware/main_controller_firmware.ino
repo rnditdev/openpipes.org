@@ -6,8 +6,10 @@ const int muxSIG2 = 14;
 const int muxSIG3 = 13;
 const int muxSIG4 = 12;
 
+int isPedalboard=0;
+
 uint32_t startTimer = millis();
-constexpr uint32_t timeDiff = 50000;
+constexpr uint32_t timeDiff = 10000;
 int sendVolumeTimeFlag = 0;
 
 
@@ -16,7 +18,7 @@ int ports[]={15,14,10,16};
 int volumecenters[]={485,484,507,512};
 int volumelow[]={230,230,330,230};
 int volumehigh[]={823,823,823,823};
-int enabledvolumesensors[]={0,0,0,0};
+int enabledvolumesensors[]={1,1,1,1};
 int enabledbuttonsensors[]={1,1,1,1};
 const int buttonValues[4];
 
@@ -63,6 +65,7 @@ void controlChange(byte channel, byte control, byte value) {
 }
 
 void processKey(int notenumber, int keystate) {
+  
    //notenumber=31-notenumber; //this code is for pedals
    //int note = 0x18 + notenumber;  //This code is for pedals
    int note=0x0 + notenumber;
@@ -70,11 +73,12 @@ void processKey(int notenumber, int keystate) {
        Serial.println("notenumber");
        Serial.println(notenumber);
     MidiUSB.sendMIDI({0x09, 0x90 | midiCh , note, 127});
-    //strip.SetPixelColor(15-(notenumber/2), RgbColor(255, 0,0));
-    //strip.Show();
     pedals[notenumber]=1;}
   else if (keystate == 1 && pedals[notenumber]==1) {
-    MidiUSB.sendMIDI({0x09, 0x90 | midiCh , note, 1});
+    if (isPedalboard==0)
+      {MidiUSB.sendMIDI({0x09, 0x90 | midiCh , note, 1});}
+    else 
+      {MidiUSB.sendMIDI({0x09, 0x90 | midiCh , note, 0});}
     pedals[notenumber]=0;
     //strip.SetPixelColor(15-(notenumber/2), RgbColor(0, 0,0));
     //strip.Show();
@@ -92,20 +96,13 @@ void processVolume(int sensor, int volumeread) {
    int newvalue =  (abs(ratio*ratio*ratio*127));
    if (newvalue < 0 ) {newvalue = 0;}
    if (newvalue > 127 ) {newvalue = 127;}
-   
 
-   if ((millis() - startTimer) > timeDiff){
-     sendVolumeTimeFlag = 1;
-     startTimer=millis();
-   }
-
-       Serial.println(newvalue);
-   if ( ((abs(volumeread -volumepedals[sensor])>5) && (enabledvolumesensors[sensor]==1)) ||   sendVolumeTimeFlag == 1 ) {
+   Serial.println(newvalue);
+   if ( ((abs(newvalue -volumepedals[sensor])>5) && (enabledvolumesensors[sensor]==1)) ||   sendVolumeTimeFlag == 1 ) {
        controlChange(0, cc, newvalue);
-
-       volumepedals[sensor]=volumeread;
+       volumepedals[sensor]=newvalue;
        MidiUSB.flush();
-       if (sendVolumeTimeFlag == 1 ) {sendVolumeTimeFlag=0;}
+        Serial.println("Enviando volumen");
        }
 }
 
@@ -170,7 +167,7 @@ void checkKeys(){
 
    }
     Serial.println();
-    delay(10);
+    delay(5);
   }
 
 void checkVolumes(){
@@ -222,6 +219,14 @@ void checkMidi() {
 
 void loop() {
   checkKeys();
+  if (isPedalboard==0){
   checkMidi();
+
+  if ((millis() - startTimer) > timeDiff){
+     sendVolumeTimeFlag = 1;
+     startTimer=millis();
+   }
   checkVolumes();
+    if (sendVolumeTimeFlag == 1 ) {sendVolumeTimeFlag=0;}
+  }
 }
